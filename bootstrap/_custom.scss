@@ -1,0 +1,17 @@
+* {
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.link-muted {
+    color: #8c98a4;
+    border-bottom: 1px dashed #97a4af;
+    text-decoration: none;
+
+    :hover {
+        color: #377dff;
+    }
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
