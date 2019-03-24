@@ -1,0 +1,17 @@
+@import './btn';
+
+//Variables: $
+$font-size: 1.2em;
+
+$color-primary: #006064;
+
+$attr: 'background';
+
+//Exposing local preference to global
+.link {
+    @include btn(#C62828, #4A148C);
+    $color-link: #01579B !global;
+    #{$attr}-color: #00897B; // interpolation
+}
+
+

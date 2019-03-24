@@ -1,0 +1,75 @@
+
+@import './variable';
+
+// nested within one another
+
+$color-primary: #E0F7FA !default;
+
+.container {
+    background: #E0F7FA;
+    text-align: center;
+    color: $color-primary;
+    padding: 10px;
+
+    .description {
+        color: #26C6DA;
+    }
+
+    a {
+        color: #4FC3F7;
+        
+
+        //Referencing Parent Selectors: &
+        &:hover {
+            color: $color-link;
+        }
+    }
+}
+
+//Nested Properties
+.funky {
+    font: {
+      family: Arial;
+      size: $font-size;    
+    }
+}
+
+.mixin-container {
+    background-color: #FCE4EC;
+    padding: 10px;
+}
+
+@mixin colors($text, $background, $border) {
+    color: $text;
+    background-color: $background;
+    border: 1px solid $border;
+  }
+
+$value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+
+$var-padding: 5px;
+
+@function get-padding($n) {
+  @return $n + $var-padding;
+}
+
+.secondary {
+    @include colors($value-map...);
+    padding: get-padding(5px);
+    display: inline
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.error {
+    color: red;
+    display: inline;
+}
+
+.series-error {
+    @extend .error;
+    border-bottom: 1px dotted red;
+}
+
